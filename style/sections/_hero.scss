@@ -1,0 +1,112 @@
+.primary-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 5.6rem;
+  background: $white-color;
+  color: $dark-blue-text;
+  font-weight: 400;
+  line-height: 1.2;
+  animation: fadeIn 1s linear forwards;
+
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
+  @media (max-width: 600px) {
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 5.6rem;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+    text-align: left;
+    
+    @media (max-width: 1200px) {
+      font-size: 4rem;
+    }
+    @media (max-width: 900px) {
+      font-size: 3.6rem;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+    @media (max-width: 400px) {
+      font-size: 2.8rem;
+    }
+  }
+
+  .action-button {
+    display: flex;
+    @media (max-width: 900px) {
+      justify-content: center;
+    }
+
+    a {
+      font-size: 2.4rem;
+      @media (max-width: 600px) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.navigate-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  width: 30px;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 50px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border: 2px solid $secondary-color;
+    border-top: none;
+    border-left: none;
+    transform: translate(-50%, -100%) rotate(45deg);
+    animation: bounceArrow 1s ease-in-out infinite;
+  }
+  &::after {
+    top: 30%;
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes fadeIn {
+  0%, 50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bounceArrow {
+  0% {
+    opacity: 0;
+  }
+  30%, 60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 90%;
+  }
+}
