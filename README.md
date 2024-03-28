@@ -1,3 +1,3 @@
-# Personal-Portfolio
+# Personal Website
 
-Source for my personal portfolio
+Personal website.
